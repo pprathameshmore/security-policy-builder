@@ -1,7 +1,7 @@
-import path from 'path';
 import fs from 'fs-extra';
 import fetch from 'node-fetch';
-import { PolicyBuilderConfig, PolicyBuilderPaths } from '~/src/types';
+import path from 'path';
+import { PolicyBuilderConfig, PolicyBuilderPaths } from './types';
 
 const FileSet = require('file-set');
 

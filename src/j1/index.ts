@@ -1,10 +1,10 @@
-import { Entity, EntityPropertyValue } from '~/src/j1/types';
-import fetch, { RequestInit, Response as FetchResponse } from 'node-fetch';
-import { print as graphqlAstToString } from 'graphql/language/printer';
-import { DocumentNode } from 'graphql';
-import * as j1GraphQL from './j1GraphQL';
-import { EntityForSync, RelationshipForSync } from '~/src/types';
 import { retry } from '@lifeomic/attempt';
+import { DocumentNode } from 'graphql';
+import { print as graphqlAstToString } from 'graphql/language/printer';
+import fetch, { RequestInit, Response as FetchResponse } from 'node-fetch';
+import { Entity, EntityPropertyValue } from '../j1/types';
+import { EntityForSync, RelationshipForSync } from '../types';
+import * as j1GraphQL from './j1GraphQL';
 
 export type JupiterOneEnvironment = 'localhost' | 'dev' | 'prod' | undefined;
 

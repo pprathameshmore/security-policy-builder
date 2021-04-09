@@ -1,5 +1,5 @@
 import commander from 'commander';
-import packageJson from '~/package.json';
+import packageJson from 'package.json';
 
 commander
   .version(packageJson.version, '-V, --version')

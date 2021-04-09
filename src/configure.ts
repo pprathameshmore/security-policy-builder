@@ -1,24 +1,24 @@
 // import {questions} from "./questions/base");
-import stripAnsi from 'strip-ansi';
+import chalk from 'chalk';
+import fs from 'fs-extra';
 import inquirer, {
   ConfirmQuestion,
   InputQuestion,
   QuestionCollection,
 } from 'inquirer';
-import chalk from 'chalk';
-import fs from 'fs-extra';
+import stripAnsi from 'strip-ansi';
 import { baseQuestions } from './questions/base';
-import { scorecardQuestions } from './questions/scorecard';
 import { hipaaQuestions } from './questions/hipaa';
+import { scorecardQuestions } from './questions/scorecard';
 import {
+  AdoptedPolicyBuilderElements,
   Organization,
   PolicyBuilderConfig,
-  AdoptedPolicyBuilderElements,
   PolicyBuilderElement,
   PolicyBuilderPartial,
   PolicyBuilderPartialType,
-} from '~/src/types';
-import pickAdopted from '~/src/util/pickAdopted';
+} from './types';
+import pickAdopted from './util/pickAdopted';
 
 // expects initial configuration object
 // interactively prompts for any unconfigured organization values
@@ -209,12 +209,12 @@ function getAdoptedProceduresForPolicy(
   policyId: string,
   config: PolicyBuilderConfig
 ) {
-  const procedures = [];
+  const procedures: any[] = [];
   const policy = config.policies?.find((p) => p.id === policyId);
   if (!policy) {
     throw new Error(`unknown policy id ${policyId}`);
   }
-  let policyImplementor;
+  let policyImplementor: any;
   for (const procedure of policy.procedures ?? []) {
     policyImplementor =
       config.procedures?.find((p) => p.id === procedure) ??

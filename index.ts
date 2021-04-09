@@ -1,8 +1,8 @@
-import * as assets from './assets';
-import * as configure from './configure';
-import * as render from './render';
 import path from 'path';
-import { PolicyBuilderConfig, PolicyBuilderPaths } from '~/src/types';
+import * as assets from './src/assets';
+import * as configure from './src/configure';
+import * as render from './src/render';
+import { PolicyBuilderConfig, PolicyBuilderPaths } from './src/types';
 
 const defaultPaths: PolicyBuilderPaths = {
   partials: 'partials',

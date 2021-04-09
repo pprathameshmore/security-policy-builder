@@ -1,4 +1,4 @@
-import { PolicyBuilderQuestion } from '~/src/types';
+import { PolicyBuilderQuestion } from '../types';
 
 export const hipaaQuestions: PolicyBuilderQuestion[] = [
   {

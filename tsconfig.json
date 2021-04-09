@@ -3,7 +3,10 @@
   "compilerOptions": {
     "rootDir": ".",
     "outDir": ".tsc/dist",
-    "baseUrl": "."
+    "baseUrl": ".",
+    "esModuleInterop": true,
+    "noImplicitAny": false,
+    "strict": false
   },
   "include": [
     "src/**/*.ts",
@@ -11,7 +14,8 @@
     "test/**/*.ts",
     "jest.*.ts",
     "jest.*.js",
-    "*.config.js"
+    "*.config.js",
+    "index.ts"
   ],
   "exclude": ["**/*.bak/**/*", "**/dist/**/*"]
 }

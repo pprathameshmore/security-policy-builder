@@ -1,10 +1,8 @@
-import * as configure from '~/src/configure';
-import moment from 'moment';
-import * as render from '~/src/render';
 import chalk from 'chalk';
-import path from 'path';
 import fs from 'fs-extra';
-import { DEFAULT_TEMPLATES } from '~/src/constants';
+import moment from 'moment';
+import path from 'path';
+import { Entity } from '~/src/j1/types';
 import {
   AnnotatedRefs,
   AssessmentInput,
@@ -18,8 +16,10 @@ import {
   StandardName,
   StandardRequirement,
 } from '~/src/types';
+import * as configure from '../configure';
+import { DEFAULT_TEMPLATES } from '../constants';
+import * as render from '../render';
 import { hipaaAssessmentQuestions } from './hipaa/questions';
-import { Entity } from '~/src/j1/types';
 
 const STANDARDS: Record<string, object[]> = {
   hipaa: hipaaAssessmentQuestions,

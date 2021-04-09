@@ -1,4 +1,4 @@
-import { PolicyBuilderElement } from '~/src/types';
+import { PolicyBuilderElement } from '../types';
 
 function adoptedFilter(item: { adopted?: boolean }) {
   return item.adopted !== false;

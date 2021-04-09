@@ -1,4 +1,4 @@
-import { PolicyBuilderQuestion } from '~/src/types';
+import { PolicyBuilderQuestion } from '../types';
 import * as colors from './helpers/colors';
 import { validateEmail, validateWebURL } from './helpers/validate';
 

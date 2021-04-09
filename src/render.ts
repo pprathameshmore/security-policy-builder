@@ -1,18 +1,18 @@
-import * as configure from './configure';
-import mustache from 'mustache';
-import * as assets from './assets';
 import chalk from 'chalk';
-import path from 'path';
-import pMap from 'p-map';
 import fs from 'fs-extra';
-import { DEFAULT_MKDOCS_YML } from '~/src/constants';
+import mustache from 'mustache';
+import pMap from 'p-map';
+import path from 'path';
+import * as assets from './assets';
+import * as configure from './configure';
+import { DEFAULT_MKDOCS_YML } from './constants';
 import {
   Organization,
   PolicyBuilderConfig,
   PolicyBuilderPartial,
   PolicyBuilderPaths,
   PolicyBuilderStatus,
-} from '~/src/types';
+} from './types';
 
 function fillTemplate(templateFile: string, orgConfig: Organization) {
   return mustache.render(fs.readFileSync(templateFile, 'utf8'), orgConfig);
@@ -109,7 +109,7 @@ async function renderPSPDocs(
         policy.id,
         config
       );
-      viewPartials = await pMap(adoptedProcedures, async (procedure) => {
+      viewPartials = await pMap(adoptedProcedures, async (procedure: any) => {
         partialFile = path.join(paths.partials, procedure.file);
         return '\n' + (await fs.readFile(partialFile, 'utf8')) + '\n';
       });

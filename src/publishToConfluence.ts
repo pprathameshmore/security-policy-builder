@@ -1,9 +1,9 @@
-import { prompt } from 'inquirer';
-import path from 'path';
 import fs from 'fs-extra';
+import { prompt } from 'inquirer';
 import fetch from 'node-fetch';
+import path from 'path';
 import showdown from 'showdown';
-import * as error from '~/src/error';
+import * as error from './error';
 
 const converter = new showdown.Converter({
   parseImgDimensions: true,
@@ -107,8 +107,8 @@ export default async function publishToConfluence(
     ? JSON.parse(fs.readFileSync(CONFLUENCE_PAGES, { encoding: 'utf8' }))
     : {};
 
-  const worked = [];
-  const failed = [];
+  const worked: any[] = [];
+  const failed: any[] = [];
 
   const docs = fs.readdirSync(docsPath);
 

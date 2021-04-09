@@ -1,6 +1,6 @@
 import gql from 'graphql-tag';
-import { EntityPropertyValue, Entity, Relationship } from '~/src/j1/types';
-import { JupiterOneQuery as JupiterOneGraphQLQuery } from '~/src/j1';
+import { JupiterOneQuery as JupiterOneGraphQLQuery } from '../j1';
+import { Entity, EntityPropertyValue, Relationship } from '../j1/types';
 import { PolicyBuilderConfig } from '../types';
 
 export type J1QLVariables = Record<string, EntityPropertyValue>;

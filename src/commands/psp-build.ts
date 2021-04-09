@@ -1,14 +1,14 @@
-import { PolicyBuilderConfig, PolicyBuilderPaths } from '~/src/types';
-import { policybuilder } from '~/src';
-import pluralize from 'pluralize';
-import * as configure from '~/src/configure';
-import commander from 'commander';
 import chalk from 'chalk';
-import * as error from '~/src/error';
-import path from 'path';
+import commander from 'commander';
 import fs from 'fs-extra';
-import { DEFAULT_TEMPLATES } from '~/src/constants';
-import packageJson from '~/package.json';
+import path from 'path';
+import pluralize from 'pluralize';
+import { policybuilder } from '../../index';
+import packageJson from '../../package.json';
+import * as configure from '../configure';
+import { DEFAULT_TEMPLATES } from '../constants';
+import * as error from '../error';
+import { PolicyBuilderConfig, PolicyBuilderPaths } from '../types';
 
 const EUSAGEERROR = 126;
 

@@ -1,21 +1,21 @@
-import * as configure from '~/src/configure';
-import commander from 'commander';
-import * as assessment from '~/src/assessment';
 import chalk from 'chalk';
-import * as error from '~/src/error';
-import path from 'path';
+import commander from 'commander';
 import fs from 'fs-extra';
+import path from 'path';
+import packageJson from '../../package.json';
+import * as assessment from '../assessment';
+import * as configure from '../configure';
+import { DEFAULT_TEMPLATES } from '../constants';
+import * as error from '../error';
+import { createJupiterOneClient, JupiterOneEnvironment } from '../j1';
+import { Entity } from '../j1/types';
 import {
   AssessmentAnswers,
+  AssessmentInput,
   Gap,
   PolicyBuilderConfig,
   PolicyBuilderPaths,
-  AssessmentInput,
-} from '~/src/types';
-import { Entity } from '~/src/j1/types';
-import { DEFAULT_TEMPLATES } from '~/src/constants';
-import packageJson from '~/package.json';
-import { createJupiterOneClient, JupiterOneEnvironment } from '~/src/j1';
+} from '../types';
 
 const EUSAGEERROR = 126;
 

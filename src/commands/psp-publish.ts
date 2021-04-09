@@ -1,26 +1,26 @@
-import { prompt } from 'inquirer';
-import commander from 'commander';
-import * as error from '~/src/error';
-import publishToConfluence, {
-  PublishToConfluenceOptions,
-} from '~/src/publishToConfluence';
-import path from 'path';
-import fs, { promises as fsPromises } from 'fs';
-import pAll, { PromiseFactory } from 'p-all';
-import {
-  PolicyBuilderConfig,
-  SectionName,
-  TemplateData,
-  PolicyBuilderElement,
-} from '~/src/types';
 import chalk from 'chalk';
-import packageJson from '~/package.json';
+import commander from 'commander';
+import fs, { promises as fsPromises } from 'fs';
+import { prompt } from 'inquirer';
+import pAll, { PromiseFactory } from 'p-all';
+import packageJson from 'package.json';
+import path from 'path';
+import * as error from '../error';
 import {
   createJupiterOneClient,
   J1Options,
   JupiterOneClient,
   JupiterOneEnvironment,
-} from '~/src/j1';
+} from '../j1';
+import publishToConfluence, {
+  PublishToConfluenceOptions,
+} from '../publishToConfluence';
+import {
+  PolicyBuilderConfig,
+  PolicyBuilderElement,
+  SectionName,
+  TemplateData,
+} from '../types';
 
 const EUSAGEERROR = 126;
 const MAX_CONCURRENCY = 2;

@@ -1,4 +1,4 @@
-import { PolicyBuilderQuestion } from '~/src/types';
+import { PolicyBuilderQuestion } from '../types';
 import { validateWebURL } from './helpers/validate';
 
 export const scorecardQuestions: PolicyBuilderQuestion[] = [

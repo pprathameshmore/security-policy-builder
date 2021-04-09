@@ -2,7 +2,7 @@ import { Opaque } from 'type-fest';
 import {
   EntityAdditionalProperties,
   RelationshipAdditionalProperties,
-} from '~/src/j1/types';
+} from './j1/types';
 
 export interface PolicyBuilderElement {
   id: string;

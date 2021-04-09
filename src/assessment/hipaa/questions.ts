@@ -1,4 +1,4 @@
-import { PolicyAssessmentQuestion } from '~/src/types';
+import { PolicyAssessmentQuestion } from '../../types';
 
 export const hipaaAssessmentQuestions: PolicyAssessmentQuestion[] = [
   {
