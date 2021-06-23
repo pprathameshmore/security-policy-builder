@@ -1,5 +1,4 @@
 import path from 'path';
-import * as assets from './src/assets';
 import * as configure from './src/configure';
 import * as render from './src/render';
 import { PolicyBuilderConfig, PolicyBuilderPaths } from './src/types';
@@ -17,8 +16,8 @@ export async function policybuilder(
   configure.mergeAutomaticPSPVars(configuration);
 
   // marshal static assets for mkdocs
-  await assets.copyStaticAssets(paths);
-  await assets.downloadCustomLogo(configuration, paths);
+  //await assets.copyStaticAssets(paths);
+  //await assets.downloadCustomLogo(configuration, paths);
   await render.renderMkdocsYAML(
     configuration,
     paths,
